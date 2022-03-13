@@ -1,0 +1,35 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	color: black;
+	margin-top: 30px;
+	margin-bottom: 30px;
+
+}
+
+div {
+	text-align: center;
+	width: 85%;
+	margin: 0 auto;
+}
+
+input {
+	width: 100%;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 6px;
+	border: 2px solid black;
+	box-shadow: 2px .5px #999;
+	font-size: 20px; /* look for standard size */
+}
+
+button {
+	width: 30%;
+	border-radius: 6px;
+	background-color: #66d455;
+	color: white;
+	font-size: 20px;
+}
