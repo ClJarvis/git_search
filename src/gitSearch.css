@@ -3,6 +3,13 @@
 	padding: 0;
 }
 
+body {
+	background-color: whitesmoke;
+	background: linear-gradient(#66d455, whitesmoke);
+	background-repeat: no-repeat;
+	height: 100%;
+}
+
 h1 {
 	color: black;
 	margin-top: 30px;
