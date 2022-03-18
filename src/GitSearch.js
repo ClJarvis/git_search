@@ -14,7 +14,7 @@ class GitSearch extends Component {
 	};
 
 	searchApi = userInput => {
-		var userSearch = "https://api.github.com/search/users";
+		var userSearch = ("https://api.github.com/search/users/" + this.state.searchValue);
 		fetch(userSearch)
 			.then(response => {
 				return response.json();
