@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import GitSearch from './GitSearch';
+import 'bootstrap/dist/css/bootstrap.css';
 import './gitSearch.css';
 
 ReactDOM.render(
