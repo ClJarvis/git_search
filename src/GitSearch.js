@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import './gitSearch.css';
-
+// Put any other imports below so that CSS from your
+// components takes precedence over default styles.
 /*
 class GitSearch extends Component {
 	state = {
@@ -35,32 +36,40 @@ searchForm.addEventListener('submit', (e) => {
 	e.preventDefault();
 
 	let userInput = document.getElementById('userInput');
+
 	let username = userInput.value;
-	searchUsers(username); 
+
+	searchUsers(username);
+
 })
 
 function searchUsers(username) {
 	const reqst = new XMLHttpRequest();
+
 	const url = `https://api.github.com/users/${username}/repos`;
 
 	reqst.open('GET', url, true);
+
 	reqst.onload = function() {
 		const data = JSON.parse(this.response);
+
 		console.log(data);
 
 		for (let i in data){
 			let ul = document.getElementById('searchUsers');
+
 			let li = document.createElement('li');
 
 			li.classList.add('list-group-item')
+        
   
             li.innerHTML = (`
-                <p><strong>Owner:</strong> ${data[i].owner.login}</p>
+                <p><strong>Username:</strong> ${data[i].owner.login}</p>
+                <p> <img src="${data[i].owner.avatar_url}" </p>
                 <p><strong>Description:</strong> ${data[i].description}</p>
-                <p><strong>URL:</strong> <a href="${data[i].html_url}">${data[i].html_url}</a></p>
-                <p><strong>Open Issues:</strong> ${data[i].open_issues}</p>
-                <p><strong>Open Issues Count:</strong> ${data[i].open_issues_count}</p>
+                <p><strong>URL:</strong> <a href="${data[i].owner.html_url}" target="blank">${data[i].html_url}</a></p>
                 <p><strong>Stars:</strong> ${data[i].stargazers_count}</p>
+                <p><strong>Followers:</strong> ${data[i].owner.followers_url}</p>
 
             `);
            
@@ -73,6 +82,8 @@ function searchUsers(username) {
 }
 
 /*
+
+ searchUsers('facebook'); 
 
 
 	render() {
