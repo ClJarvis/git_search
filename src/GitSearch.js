@@ -64,12 +64,12 @@ function searchUsers(username) {
         
   
             li.innerHTML = (`
-                <p><strong>Username:</strong> ${data[i].owner.login}</p>
-                <p> <img src="${data[i].owner.avatar_url}" </p>
-                <p><strong>Description:</strong> ${data[i].description}</p>
-                <p><strong>URL:</strong> <a href="${data[i].owner.html_url}" target="blank">${data[i].html_url}</a></p>
+                <p><strong>Profile:</strong> <a href="${data[i].owner.html_url}" target="blank">${data[i].owner.login.charAt(0).toUpperCase() + data[i].owner.login.slice(1)}</a></p>
+                <p> <img class="avatar" src="${data[i].owner.avatar_url}" </p>
+                <p><strong>Bio:</strong> ${data[i].owner.login.bio}</p>
+                <p><strong>URL:</strong> <a href="${data[i].owner.html_url}" target="blank">${data[i].owner.html_url}</a></p>
                 <p><strong>Stars:</strong> ${data[i].stargazers_count}</p>
-                <p><strong>Followers:</strong> ${data[i].owner.followers_url}</p>
+                <p><strong>Followers:</strong> ${data[i].owner.followers_url} </p>
 
             `);
            

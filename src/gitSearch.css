@@ -4,14 +4,14 @@
 }
 
 body {
-	background-color: whitesmoke;
-	background: linear-gradient(#66d455, whitesmoke);
+	background-color: black;
+	background: linear-gradient(#66d455, rgba(0, 0, 0, .92));
 	background-repeat: no-repeat;
 	height: 100%;
 }
 
 h1 {
-	color: black;
+	color: whitesmoke;
 	margin-top: 30px;
 	margin-bottom: 30px;
 
@@ -33,10 +33,26 @@ input {
 	font-size: 20px; /* look for standard size */
 }
 
-button {
-	width: 30%;
+button, #searchBtn {
+	width: 75%;
 	border-radius: 6px;
-	background-color: #66d455;
+	background-color: #4b9565;
 	color: white;
 	font-size: 20px;
+	border-color: white;
+}
+
+.list-group-item {
+	text-align: left;
+	background-color: black;
+	color: white;
+	margin-bottom: 10px;
+}
+
+.list-group-item a {
+	color: white;
+}
+
+.avatar {
+	border-radius: 50%;
 }
