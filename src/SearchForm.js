@@ -15,20 +15,26 @@ form.addEventListener('submit', function(e){
 	.then((result) => result.json())
 	.then((data) => {
 
+for (let i in data){
+				let div = document.getElementById('searchUsers');
 
+			let p = document.createElement('p');
+
+			p.classList.add('list-group-item')
 
 		console.log(data)
 
 		document.getElementById("searchUsers").innerHTML =`
 		<p><strong>Profile:</strong> <a href="https://www.github.com/${nameEntered}" target="blank">${data.login.charAt(0).toUpperCase() + data.login.slice(1)}</a></p>
-		<a href="https://www.github.com/${nameEntered}" target="blank"> <img src="${data.avatar_url}"/></a>
 		<p><strong> Name:</strong> ${data.name}</p>
 		<p><strong>Bio:</strong> ${data.bio}</p>
 		<p><strong>Followers:</strong> ${data.followers}</p>
+		<a href="https://www.github.com/${nameEntered}" target="blank"> <img class="avatar" src="${data.avatar_url}" class="avatar"/></a>
 
 
 	`
 	
+	}
 	})
 
 })
