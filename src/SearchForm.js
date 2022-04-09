@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import GitSearch from "./GitSearch";
 import ReactDOM from 'react-dom';
 import ReactPaginate from 'react-paginate';
-import Pagination from "./Pagination";
+//import Pagination from "./Pagination";
 
 export default function SearchForm() {
 

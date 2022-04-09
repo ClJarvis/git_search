@@ -35,7 +35,7 @@ function searchUsers(username) {
 	reqst.onload = function() {
 		const data = JSON.parse(this.response);
 
-	//	console.log(data);
+		console.log(data);
 
 		for (let i in data){
 			let div = document.getElementById('searchUsers');
@@ -49,6 +49,7 @@ function searchUsers(username) {
                 <p><strong>Repo:</strong> <a href="${data[i].html_url}" target=blank_">${data[i].name}</a></p>
                 <p><strong>Description:</strong> ${data[i].description}</p>
                 <p><strong>Stars:</strong> ${data[i].stargazers_count}</p>
+                <p><strong>Open Issues</strong> ${data[i].open_issues_count}</p>
             `);
            
             div.appendChild(p);
@@ -62,6 +63,8 @@ function searchUsers(username) {
 
 /*
 removed from displayed items
+is it possible to make square with text then sqaure with image or 
+commit square darked per more commits.
 
                 <p> <img class="avatar" src="${data[i].owner.avatar_url}" </p>
 */
