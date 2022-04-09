@@ -1,8 +1,73 @@
 import React, { Component } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import './gitSearch.css';
-// Put any other imports below so that CSS from your
-// components takes precedence over default styles.
+
+//const queryString = 'q=' + encodeURIComponent('GitHub Octocat in:readme user:defunkt');
+// https://github.com/search?q=octocat&type=users
+
+// https://api.github.com/search/users?'q=' +encodeURIComponent(users); example
+// look up &type= 
+
+
+
+//* This version finds the user repos. It lists selected details about the repo.
+
+const searchForm = document.getElementById('searchForm');
+
+searchForm.addEventListener('submit', (e) => {
+	e.preventDefault();
+
+	let userInput = document.getElementById('userInput');
+	let username = userInput.value;
+	searchUsers(username);
+
+	// try to auto cleardocument.getElementById("searchForm").innerHTML = "";
+
+})
+
+function searchUsers(username) {
+	const reqst = new XMLHttpRequest();
+
+	const url = `https://api.github.com/users/${username}/repos`;
+
+	reqst.open('GET', url, true);
+
+	reqst.onload = function() {
+		const data = JSON.parse(this.response);
+
+	//	console.log(data);
+
+		for (let i in data){
+			let div = document.getElementById('searchUsers');
+
+			let p = document.createElement('p');
+
+			p.classList.add('list-group-item')
+  
+            p.innerHTML = (`
+                <p><h3> <a href="${data[i].owner.html_url}" target="blank">${data[i].owner.login.charAt(0).toUpperCase() + data[i].owner.login.slice(1)}'s</a> Repos</h3></p>
+                <p><strong>Repo:</strong> <a href="${data[i].html_url}" target=blank_">${data[i].name}</a></p>
+                <p><strong>Description:</strong> ${data[i].description}</p>
+                <p><strong>Stars:</strong> ${data[i].stargazers_count}</p>
+            `);
+           
+            div.appendChild(p);
+
+		}
+	}
+
+	reqst.send();
+}
+
+
+/*
+removed from displayed items
+
+                <p> <img class="avatar" src="${data[i].owner.avatar_url}" </p>
+*/
+
+
+
 /*
 class GitSearch extends Component {
 	state = {
@@ -29,61 +94,11 @@ class GitSearch extends Component {
 		});
 	};
 */
-//# TEST   TEST TEST   *//
-const searchForm = document.getElementById('searchForm');
 
-searchForm.addEventListener('submit', (e) => {
-	e.preventDefault();
-
-	let userInput = document.getElementById('userInput');
-
-	let username = userInput.value;
-
-	searchUsers(username);
-
-})
-
-function searchUsers(username) {
-	const reqst = new XMLHttpRequest();
-
-	const url = `https://api.github.com/users/${username}/repos`;
-
-	reqst.open('GET', url, true);
-
-	reqst.onload = function() {
-		const data = JSON.parse(this.response);
-
-		console.log(data);
-
-		for (let i in data){
-			let ul = document.getElementById('searchUsers');
-
-			let li = document.createElement('li');
-
-			li.classList.add('list-group-item')
-        
-  
-            li.innerHTML = (`
-                <p><strong>Profile:</strong> <a href="${data[i].owner.html_url}" target="blank">${data[i].owner.login.charAt(0).toUpperCase() + data[i].owner.login.slice(1)}</a></p>
-                <p> <img class="avatar" src="${data[i].owner.avatar_url}" </p>
-                <p><strong>Bio:</strong> ${data[i].owner.login.bio}</p>
-                <p><strong>URL:</strong> <a href="${data[i].owner.html_url}" target="blank">${data[i].owner.html_url}</a></p>
-                <p><strong>Stars:</strong> ${data[i].stargazers_count}</p>
-                <p><strong>Followers:</strong> ${data[i].owner.followers_url} </p>
-
-            `);
-           
-            ul.appendChild(li);
-
-		}
-	}
-
-	reqst.send();
-}
 
 /*
 
- searchUsers('facebook'); 
+
 
 
 	render() {
