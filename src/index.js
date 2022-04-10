@@ -1,21 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import reportWebVitals from './reportWebVitals';
-import SearchForm from './SearchForm';
-//import GitSearch from './GitSearch'
+import UserSearchForm from './UserSearchForm';
 import Pagination from "./Pagination";
+
+//import reportWebVitals from './reportWebVitals';
+//import GitSearch from './GitSearch'
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './gitSearch.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <SearchForm />
+    <UserSearchForm />
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-//  If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

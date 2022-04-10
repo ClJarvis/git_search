@@ -22,9 +22,9 @@ form.addEventListener('submit', function(e){
 	let div = document.getElementById('searchUsers');
 
 			console.log(data)
-
+// changed to https://developer.github.com/v3/search/ vs https://www.github.com/${nameEntered}
 			document.getElementById("searchUsers").innerHTML =`
-			<p><strong>Profile:</strong> <a href="https://www.github.com/${nameEntered}" target="blank">${data.login.charAt(0).toUpperCase() + data.login.slice(1)}</a></p>
+			<p><strong>Profile:</strong> <a href="https://developer.github.com/v3/search/${nameEntered}" target="blank">${data.login.charAt(0).toUpperCase() + data.login.slice(1)}</a></p>
 			<p><strong>Name:</strong> ${data.name}</p>
 			<p><strong>Bio:</strong> ${data.bio}</p>
 			<p><strong>Followers:</strong> ${data.followers}</p>
