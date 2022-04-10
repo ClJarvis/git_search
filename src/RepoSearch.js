@@ -4,13 +4,12 @@ import './gitSearch.css';
 
 //const queryString = 'q=' + encodeURIComponent('GitHub Octocat in:readme user:defunkt');
 // https://github.com/search?q=octocat&type=users
-
 // https://api.github.com/search/users?'q=' +encodeURIComponent(users); example
 // look up &type= 
 
 
 
-//* This version finds the user repos. It lists selected details about the repo.
+//* This section finds the user repos. It lists selected details about the repo.
 
 const searchForm = document.getElementById('searchForm');
 
@@ -19,11 +18,11 @@ searchForm.addEventListener('submit', (e) => {
 
 	let userInput = document.getElementById('userInput');
 	let username = userInput.value;
-	searchUsers(username);
+	RepoSearch(username);
 
 })
 
-function searchUsers(username) {
+function RepoSearch(username) {
 	const reqst = new XMLHttpRequest();
 
 	const url = `https://api.github.com/users/${username}/repos`;
@@ -59,78 +58,5 @@ function searchUsers(username) {
 }
 
 
-/*
-removed avtar from displayed items
-is it possible to make square with text then sqaure with image or 
-commit square darked per more commits.
 
-                <p> <img class="avatar" src="${data[i].owner.avatar_url}" </p>
-*/
-
-
-
-/*
-class GitSearch extends Component {
-	state = {
-		searchValue: '',
-		users: []
-
-	};
-	handleOnChange = event => {
-		this.setState({ searchValue: event.target.value });
-	};
-	handleSearch = () => {
-		this.searchApi(this.state.searchValue)
-	};
-
-	searchApi = userInput => {
-		var userSearch = ("https://api.github.com/search/users/" + this.state.searchValue);
-		fetch(userSearch)
-			.then(response => {
-				return response.json();
-			})
-		.then(jsonData => {
-			this.setState({ users: jsonData.users });
-			console.log(jsonData);
-		});
-	};
-*/
-
-
-/*
-
-
-	render() {
-		
-		return (
-			<div>
-
-				<h1>GitHub User Search</h1>
-				<form id="searchForm">
-				<input id="userinput" name="text" type="text" placeholder="User Search."  value={this.state.searhValue} />
-				<button onClick={this.handleSearch}>Find a User</button>
-
-				{this.state.users ? (
-					<div>
-						{this.state.users.map((user, index) => (
-							<div key={index}>
-							<h1>{user.login}</h1>
-							<p>test</p>
-						</div>
-						))}
-
-						</div>
-						) : (
-							<p>Search for a user</p>
-					)}
-					</form>
-			</div>
-		);
-	}  
-
-}
-	*/
-
-
-
-export default searchUsers;
+export default RepoSearch;

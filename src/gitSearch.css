@@ -4,14 +4,15 @@
 }
 
 body {
-	background-color: whitesmoke;
-	background: linear-gradient(#66d455, whitesmoke);
+	background-color: black;
+	background: linear-gradient(#66d455, rgba(0, 0, 0, .92));
 	background-repeat: no-repeat;
 	height: 100%;
+	color: white;
 }
 
 h1 {
-	color: black;
+	color: whitesmoke;
 	margin-top: 30px;
 	margin-bottom: 30px;
 
@@ -30,13 +31,37 @@ input {
 	border-radius: 6px;
 	border: 2px solid black;
 	box-shadow: 2px .5px #999;
-	font-size: 20px; /* look for standard size */
 }
 
-button {
-	width: 30%;
+button, #searchBtn {
+	width: 75%;
 	border-radius: 6px;
-	background-color: #66d455;
+	background-color: #4b9565;
 	color: white;
-	font-size: 20px;
+	font-size: 1.5rem;
+	border-color: white;
+}
+
+.list-group-item {
+	text-align: left;
+	background-color: #4b9565;
+	color: white;
+	border: 2px white solid;
+	/*padding: 4px; */
+}
+#searchUsers {
+	text-align: left;
+	margin-bottom: 50px;
+}
+.list-group-item a, #searchUsers a {
+	color: white;
+}
+
+.avatar {
+	border-radius: 50%;
+	border: 4px black solid;
+}
+
+p {
+	margin-bottom: 0rem;
 }
