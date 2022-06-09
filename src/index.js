@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import UserSearchForm from './UserSearchForm';
+import TestPaginate from './TestPaginate';
 import Pagination from "./Pagination";
-
-//import reportWebVitals from './reportWebVitals';
-//import GitSearch from './GitSearch'
+import RepoSearch from './RepoSearch'
+import SearchForm from './SearchForm'
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './gitSearch.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <UserSearchForm />
+    <RepoSearch />
+    <SearchForm />
   </React.StrictMode>,
   document.getElementById('root')
 );

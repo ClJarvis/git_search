@@ -2,12 +2,6 @@ import React, { Component } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import './gitSearch.css';
 
-//const queryString = 'q=' + encodeURIComponent('GitHub Octocat in:readme user:defunkt');
-// https://github.com/search?q=octocat&type=users
-// https://api.github.com/search/users?'q=' +encodeURIComponent(users); example
-// look up &type= 
-
-
 
 //* This section finds the user repos. It lists selected details about the repo.
 
@@ -29,6 +23,8 @@ function RepoSearch(username) {
 
 	reqst.open('GET', url, true);
 
+	document.getElementById("searchUsers").innerHTML=""
+
 	reqst.onload = function() {
 		const data = JSON.parse(this.response);
 
@@ -46,7 +42,8 @@ function RepoSearch(username) {
                 <p><strong>Repo:</strong> <a href="${data[i].html_url}" target=blank_">${data[i].name}</a></p>
                 <p><strong>Description:</strong> ${data[i].description}</p>
                 <p><strong>Stars:</strong> ${data[i].stargazers_count}</p>
-                <p><strong>Open Issues</strong> ${data[i].open_issues_count}</p>
+                <p><strong>Open Issues count</strong> ${data[i].open_issues_count}</p>
+                <p><strong>See Open Issues URL:</strong> <a href="${data[i].html_url}/issues" target=blank_">See Open Issues</a></p>
             `);
            
             div.appendChild(p);
