@@ -30,6 +30,7 @@ function RepoSearch(username) {
 
 		console.log(data);
 
+
 		for (let i in data){
 			let div = document.getElementById('searchUsers');
 
@@ -42,8 +43,9 @@ function RepoSearch(username) {
                 <p><strong>Repo:</strong> <a href="${data[i].html_url}" target=blank_">${data[i].name}</a></p>
                 <p><strong>Description:</strong> ${data[i].description}</p>
                 <p><strong>Stars:</strong> ${data[i].stargazers_count}</p>
+                <p><strong>Primary Language:</strong> ${data[i].language}</p>
                 <p><strong>Open Issues count</strong> ${data[i].open_issues_count}</p>
-                <p><strong>See Open Issues URL:</strong> <a href="${data[i].html_url}/issues" target=blank_">See Open Issues</a></p>
+                <p><strong>See Open Issues:</strong> <a href="${data[i].html_url}/issues" target=blank_">View Open Issues Here</a></p>
             `);
            
             div.appendChild(p);
