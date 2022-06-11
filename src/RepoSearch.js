@@ -28,14 +28,14 @@ function RepoSearch(username) {
 	reqst.onload = function() {
 		const data = JSON.parse(this.response);
 
-		console.log(data);
-
 
 		for (let i in data){
 			let div = document.getElementById('searchUsers');
 
 			let p = document.createElement('p');
 
+	//	const keys = Object.keys(data[i].language);
+		console.log(data[i]);
 			p.classList.add('list-group-item')
   
             p.innerHTML = (`

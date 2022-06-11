@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TestPaginate from './TestPaginate';
-import Pagination from "./Pagination";
+//import TestPaginate from './TestPaginate';
+//import Pagination from "./Pagination";
 import RepoSearch from './RepoSearch'
 import SearchForm from './SearchForm'
 

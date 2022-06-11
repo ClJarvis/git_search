@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import RepoSearch from "./RepoSearch";
 import ReactDOM from 'react-dom';
-import ReactPaginate from 'react-paginate';
+//import ReactPaginate from 'react-paginate';
 //import Pagination from "./Pagination";
 
 export default function SearchForm() {
