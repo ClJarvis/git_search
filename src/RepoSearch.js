@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Octokit } from "@octokit/rest";
 import 'bootstrap/dist/css/bootstrap.css';
 import './gitSearch.css';
 
@@ -16,10 +17,13 @@ searchForm.addEventListener('submit', (e) => {
 
 })
 
-function RepoSearch(username) {
+async function RepoSearch(username) {
 	const reqst = new XMLHttpRequest();
 
 	const url = `https://api.github.com/users/${username}/repos`;
+
+
+
 
 	reqst.open('GET', url, true);
 
@@ -34,16 +38,25 @@ function RepoSearch(username) {
 
 			let p = document.createElement('p');
 
-	//	const keys = Object.keys(data[i].language);
-		console.log(data[i]);
+/*			const octokit = new Octokit({
+  auth: 'personal-access-token123'
+})
+
+ octokit.request('GET /repos/{owner}/{repo}/languages', {
+  owner: 'OWNER',
+  repo: 'REPO'
+}) */
+
+	const languagesList = `/repos/${username}/${data[i].name}/languages`;
+		//const keys = Object.keys(data[i].language);
+		console.log(data);
 			p.classList.add('list-group-item')
   
             p.innerHTML = (`
                 <p><h3> <a href="${data[i].owner.html_url}" target="blank">${data[i].owner.login.charAt(0).toUpperCase() + data[i].owner.login.slice(1)}'s</a> Repos</h3></p>
                 <p><strong>Repo:</strong> <a href="${data[i].html_url}" target=blank_">${data[i].name}</a></p>
                 <p><strong>Description:</strong> ${data[i].description}</p>
-                <p><strong>Stars:</strong> ${data[i].stargazers_count}</p>
-                <p><strong>Primary Language:</strong> ${data[i].language}</p>
+                <p><strong>Primary Language:</strong> ${data[i].languages}</p>
                 <p><strong>Open Issues count</strong> ${data[i].open_issues_count}</p>
                 <p><strong>See Open Issues:</strong> <a href="${data[i].html_url}/issues" target=blank_">View Open Issues Here</a></p>
             `);
