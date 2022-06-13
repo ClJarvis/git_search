@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import RepoSearch from "./RepoSearch";
 import ReactDOM from 'react-dom';
-//import ReactPaginate from 'react-paginate';
-//import Pagination from "./Pagination";
+
 
 export default function SearchForm() {
 
@@ -18,10 +17,10 @@ form.addEventListener('submit', function(e){
 	.then((result) => result.json())
 	.then((data) => {
 
+			console.log("is this on?")
 
 	let div = document.getElementById('searchUsers');
 
-			console.log(data)
 
 			document.getElementById("searchUsers").innerHTML =`
 			<p class="avatarpic"><a href="https://www.github.com/${nameEntered}" target="blank"> <img class="avatar" src="${data.avatar_url}" class="avatar"/></a></p>

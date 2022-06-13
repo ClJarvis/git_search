@@ -45,15 +45,22 @@ async function RepoSearch(username) {
  octokit.request('GET /repos/{owner}/{repo}/languages', {
   owner: 'OWNER',
   repo: 'REPO'
-}) */
+})
 
-	const languagesList = `/repos/${username}/${data[i].name}/languages`;
-		//const keys = Object.keys(data[i].language);
+GET {vaultBaseUrl}/keys?api-version=7.3
+ */
+
+	const languagesList = url+`/${data[i].languages}`;
+		//////////////const keys = Object.keys(data[i].language);
 		console.log(data);
+
+
 			p.classList.add('list-group-item')
   
             p.innerHTML = (`
                 <p><h3> <a href="${data[i].owner.html_url}" target="blank">${data[i].owner.login.charAt(0).toUpperCase() + data[i].owner.login.slice(1)}'s</a> Repos</h3></p>
+				<p class="avatarpic">< <img class="avatar" src="${data[i].owner.avatar_url}" class="avatar"/></p>
+			
                 <p><strong>Repo:</strong> <a href="${data[i].html_url}" target=blank_">${data[i].name}</a></p>
                 <p><strong>Description:</strong> ${data[i].description}</p>
                 <p><strong>Primary Language:</strong> ${data[i].languages}</p>
