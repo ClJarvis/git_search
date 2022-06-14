@@ -22,9 +22,6 @@ async function RepoSearch(username) {
 
 	const url = `https://api.github.com/users/${username}/repos`;
 
-
-
-
 	reqst.open('GET', url, true);
 
 	document.getElementById("searchUsers").innerHTML=""
@@ -38,24 +35,11 @@ async function RepoSearch(username) {
 
 			let p = document.createElement('p');
 
-/*			const octokit = new Octokit({
-  auth: 'personal-access-token123'
-})
+			p.classList.add('list-group-item')
 
- octokit.request('GET /repos/{owner}/{repo}/languages', {
-  owner: 'OWNER',
-  repo: 'REPO'
-})
-
-GET {vaultBaseUrl}/keys?api-version=7.3
- */
-
-	const languagesList = url+`/${data[i].languages}`;
-		//////////////const keys = Object.keys(data[i].language);
 		console.log(data);
 
-
-			p.classList.add('list-group-item')
+       if (data[i].open_issues_count >= 1) {
   
             p.innerHTML = (`
                 <p><h3> <a href="${data[i].owner.html_url}" target="blank">${data[i].owner.login.charAt(0).toUpperCase() + data[i].owner.login.slice(1)}'s</a> Repos</h3></p>
@@ -69,13 +53,39 @@ GET {vaultBaseUrl}/keys?api-version=7.3
             `);
            
             div.appendChild(p);
-
+} else {  
+            p.innerHTML = (`
+	            <p><strong>Sorry, this Repo <a href="${data[i].html_url}" target=blank_">${data[i].name}</a> has no open Issues.</strong></p>
+            `);
+             div.appendChild(p);
 		}
-	}
+	} 	
+
+}
 
 	reqst.send();
+
 }
 
 
 
 export default RepoSearch;
+
+
+
+
+
+/*			const octokit = new Octokit({
+  auth: 'personal-access-token123'
+})
+
+ octokit.request('GET /repos/{owner}/{repo}/languages', {
+  owner: 'OWNER',
+  repo: 'REPO'
+})
+
+GET {vaultBaseUrl}/keys?api-version=7.3
+ */
+
+	//const languagesList = url+`/${data[i].languages}`;
+		//////////////const keys = Object.keys(data[i].language);
