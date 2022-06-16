@@ -3,9 +3,15 @@
 	padding: 0;
 }
 
+:root {
+	--Lightgreen: #66d455;
+	--MidGreen: rgb(36 95 57);
+	--Darkgreen: #2e382c;
+}
+
 body {
 	background-color: black;
-	background: linear-gradient(#66d455, rgb(36 95 57));
+	background: linear-gradient(#2e382c, rgb(36 95 57));
 	background-repeat: no-repeat;
 	height: 95%;
 	width: 95%;
@@ -63,6 +69,18 @@ button:hover, #searchBtn:hover{
 	filter: drop-shadow(14px 14px 10px black);
 	border-radius: 7%;
 	margin-bottom: 20px;
+
+
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 7%;
+	border-top-right-radius: 7%;
+}
+
+.list-group-item:last-child {
+	border-bottom-left-radius: 7%;
+	border-bottom-right-radius: 7%;
 }
 
 #searchUsers {
@@ -83,7 +101,10 @@ button:hover, #searchBtn:hover{
 
 #searchForm {
 	height: 75%;
+	width: 500px;
 }
+
+
 
  #searchUsers a {
 	color: white;
