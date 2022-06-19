@@ -1,6 +1,6 @@
 # GitSearch
 
-This project is a Repo search using the gitHub API. The current version shows a user's profile avatar and some of thier public repos. 
+This project is a Repo search using the gitHub API. The current version shows a user's profile avatar and some of their public repos. 
 
 ## Usage
 
@@ -12,5 +12,5 @@ React, JavaScript, CSS
 
 ## Theme
 
-Colors are based on gitHub's dark mode with a gradient background the starts light green and transitions to darker the more results are shown.
-The Repo results boxes are set to match commit boxes.
+Colors are based on gitHub's dark mode with a gradient background the starts dark green and transitions to medium green. The more results, ie more repos witj open issues, the longer the page is.
+An earlier version has a brighter green but I decided it was just too bright on screen. Now the color transition is more subtle.
