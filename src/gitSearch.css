@@ -19,13 +19,13 @@ body {
 }
 
 .instructions{
-	color: white;
+	color: white; /* #4b9565 */
 	text-align: left;
 	padding-bottom: 10px; 
 }
 
 h1 {
-	color: #4b9565;
+	color: white;
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
@@ -65,12 +65,9 @@ button:hover, #searchBtn:hover{
 .list-group-item {
 	text-align: left;
 	background-color: white;
-/*	color: #4b9565; */
 	filter: drop-shadow(14px 14px 10px black);
 	border-radius: 7%;
 	margin-bottom: 20px;
-
-
 }
 
 .list-group-item:first-child {
@@ -105,7 +102,6 @@ button:hover, #searchBtn:hover{
 }
 
 
-
  #searchUsers a {
 	color: white;
 }
@@ -123,7 +119,7 @@ button:hover, #searchBtn:hover{
 	height: 350px;
 	width: 350px;
 	border-radius: 50%;
-	border: 4px black solid;
+	border: 4px var(--Darkgreen) solid;
 	margin-bottom: 20px;
 }
 
@@ -135,58 +131,3 @@ p {
 	margin-bottom: 0rem;
 }
 
-
-
-
-/* CSS For altertnate user search */
-
-#count 
-{
-	background-color: white;
-	color: #4b9565;
-	padding: 2px 4px;
-}
-
-
-
-
-.container{
-    display: flex;
-    list-style: none;
-}
-
-.page{
-	padding: 10px;
-    border: 1px solid #dcdcdc;
-    border-radius: 6px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.disabled{
-    cursor: not-allowed;
-    
-}
-
-.active{
-	border: 2px solid #000;
-    font-weight: bold;
-}
-
-.previous{
-    padding: 10px;
-    border-radius: 6px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.break{
-    padding: 10px;
-}
-
-.next{
-    padding: 10px;
-    border-radius: 6px;
-    margin-right: 10px;
-    cursor: pointer;
-}

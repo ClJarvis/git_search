@@ -17,7 +17,6 @@ form.addEventListener('submit', function(e){
 	.then((result) => result.json())
 	.then((data) => {
 
-			console.log("is this on?")
 
 	let div = document.getElementById('searchUsers');
 
@@ -29,6 +28,8 @@ form.addEventListener('submit', function(e){
 			<hr>
 		`
 		})
+
+
 
 	})
 }
