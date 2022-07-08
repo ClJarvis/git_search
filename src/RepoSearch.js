@@ -40,7 +40,7 @@ const url = await `https://api.github.com/users/${username}/repos`;
 
 
 /// Attempt to display could not find user message
-	if (data[i].id === ''){
+	if (url === ''){
 			let div = document.getElementById('notFound');
 
 			let p = document.createElement('p');
@@ -75,13 +75,13 @@ const url = await `https://api.github.com/users/${username}/repos`;
 if (username === null){
 	function notFound() {
       var notFound = document.getElementById("notFound");
-      notFound.innerHTML = "User not found";
+      notFound.innerHTML = "User not found repo";
 
     
 }
       notFound()
   }
-		console.log(data);
+	//	console.log(data);
 
 }
 

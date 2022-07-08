@@ -17,6 +17,15 @@ form.addEventListener('submit', function(e){
 	.then((result) => result.json())
 	.then((data) => {
 
+		if(data.id === undefined){
+	function notFound() {
+      var notFound = document.getElementById("notFound");
+      notFound.innerHTML = "Sorry, user "+ nameEntered + " not found!";
+
+    console.log(data)
+}
+      notFound()
+}
 
 	let div = document.getElementById('searchUsers');
 
