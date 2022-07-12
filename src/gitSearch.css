@@ -13,8 +13,8 @@ body {
 	background-color: black;
 	background: linear-gradient(#2e382c, rgb(36 95 57));
 	background-repeat: no-repeat;
-	height: 95%;
-	width: 95%;
+	height: 100vh;
+	width: 95vw;
 	color: white;
 }
 
@@ -32,7 +32,7 @@ h1 {
 
 div {
 	text-align: center;
-	width: 90%;
+	width: 94vw;
 	margin: 0 auto;
 }
 
@@ -78,6 +78,15 @@ button:hover, #searchBtn:hover{
 .list-group-item:last-child {
 	border-bottom-left-radius: 7%;
 	border-bottom-right-radius: 7%;
+}
+
+#notFound {
+	text-align: center;
+	margin-top: 25px;
+	margin-bottom: 50px;
+	color: white;
+	width: 100%;
+	font-size: 1.5rem;
 }
 
 #searchUsers {
