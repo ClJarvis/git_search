@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import { Octokit } from "@octokit/rest";
 import 'bootstrap/dist/css/bootstrap.css';
 import './gitSearch.css';
-//import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
+import { createTokenAuth } from "https://cdn.skypack.dev/@octokit/auth-token";
 
-//* This section finds the user repos. It lists selected details about the repo.
+//* This module finds the user repos. It lists selected details about the repo.
+//const authentication = await auth();
+
 
 const searchForm = document.getElementById('searchForm');
 
@@ -18,9 +20,9 @@ searchForm.addEventListener('submit', (e) => {
 })
 
 
-
 async function RepoSearch(username) {
 	const reqst = new XMLHttpRequest();
+
 
 const url = await `https://api.github.com/users/${username}/repos`;
 
@@ -36,54 +38,30 @@ const url = await `https://api.github.com/users/${username}/repos`;
 
 			let p = document.createElement('p');
 
-			p.classList.add('list-group-item')
-
-
-/// Attempt to display could not find user message
-	if (url === ''){
-			let div = document.getElementById('notFound');
-
-			let p = document.createElement('p');
-
-			p.classList.add('list-group-item')
-
-			            p.innerHTML = (`
-                Could not find ${username}.
-             
-            `);
-           
-            div.appendChild(p); 
-        }
+			p.classList.add('list-group-item');
 
 
        if (data[i].open_issues_count >= 1) {
 
             p.innerHTML = (`
+             <p><h3> <a href="${data[i].owner.html_url}" target="blank">${data[i].owner.login.charAt(0).toUpperCase() + data[i].owner.login.slice(1)}'s</a> Repos</h3></p>
+				<p class="avatarpic"><img class="avatar" src="${data[i].owner.avatar_url}" class="avatar"/></p>			
                 <p><strong>Repo:</strong> <a href="${data[i].html_url}" target=blank_">${data[i].name.charAt(0).toUpperCase() + data[i].name.slice(1)}</a></p>
-                <p><strong>Language:</strong> ${data[i].languages_url.language}</p>
-             
+                <p><strong>Description:</strong> ${data[i].description}</p>
+                <p><strong>Open Issues count:</strong> ${data[i].open_issues_count}</p>
+                <p><strong>Open Issues page:</strong> <a href="${data[i].html_url}/issues" target=blank_">View Open Issues on GitHub</a></p>
+                <p><strong>Primary Language:</strong> ${data[i].language}</p>
+                <p><strong>Topics:</strong> ${data[i].topics.join(", ")}</p>
             `);
            
             div.appendChild(p);
 		} 
 
-
-
 	} 	
-///Alternative Attempt to display could not find user message
 
-if (username === null){
-	function notFound() {
-      var notFound = document.getElementById("notFound");
-      notFound.innerHTML = "User not found repo";
+	console.log(data);
 
-    
-}
-      notFound()
   }
-	//	console.log(data);
-
-}
 
 	reqst.send();
 
@@ -92,13 +70,3 @@ if (username === null){
 
 
 export default RepoSearch;
-
-
-
-/*              <p><h3> <a href="${data[i].owner.html_url}" target="blank">${data[i].owner.login.charAt(0).toUpperCase() + data[i].owner.login.slice(1)}'s</a> Repos</h3></p>
-				<p class="avatarpic"><img class="avatar" src="${data[i].owner.avatar_url}" class="avatar"/></p>			
-                <p><strong>Repo:</strong> <a href="${data[i].html_url}" target=blank_">${data[i].name.charAt(0).toUpperCase() + data[i].name.slice(1)}</a></p>
-                <p><strong>Description:</strong> ${data[i].language}</p>
-               <p><strong>Open Issues count:</strong> ${data[i].open_issues_count}</p>
-                <p><strong>Open Issues page:</strong> <a href="${data[i].html_url}/issues" target=blank_">View Open Issues on GitHub</a></p>
-*/
