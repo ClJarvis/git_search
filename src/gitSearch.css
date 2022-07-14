@@ -11,11 +11,11 @@
 
 body {
 	background-color: black;
-	background: linear-gradient(#2e382c, rgb(36 95 57));
-	background-repeat: no-repeat;
-	height: 100vh;
-	width: 95vw;
+	background: linear-gradient(rgb(36 95 57), #22401c, rgb(36 95 57));/*var(--MidGreen);*/
+	height: 100%;
+	width: 95%;
 	color: white;
+	/*background-repeat: no-repeat; */
 }
 
 .instructions{
@@ -54,12 +54,18 @@ button, #searchBtn {
 	color: white;
 	font-size: 1.5rem;
 	border-color: #151815;
+	box-shadow: 2px 0.5px var(--Lightgreen);
 }
 
 button:hover, #searchBtn:hover{
 	border-color: black;
+	box-shadow: 2px 0.5px var(--Lightgreen);;
 	}
 
+button:active, #searchBtn:active{
+	border-color: var(--Darkgreen);
+	box-shadow: 2px 0.5px var(--Lightgreen);
+	}
 
 
 .list-group-item {
