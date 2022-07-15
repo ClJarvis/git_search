@@ -11,7 +11,7 @@
 
 body {
 	background-color: black;
-	background: linear-gradient(rgb(36 95 57), #22401c, rgb(36 95 57));/*var(--MidGreen);*/
+	background: linear-gradient(rgb(36 95 57), #22401c, rgb(36 95 57)); /*var(--MidGreen);*/
 	height: 100%;
 	width: 95%;
 	color: white;
