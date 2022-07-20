@@ -9,7 +9,7 @@
       content="Web site created using create-react-app"
     />
    
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="manifest" href="%PUBLIC_URL%/src/manifest.json" />
 
     <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -28,7 +28,7 @@
         Enter a GitHub username to see if they have repositories with open issues.
       </div>
         <input id="userInput" class="form-control mb-5" type="text" name="username" placeholder="Enter GitHub Username">
-        <input id="searchBtn" type="submit" value="Submit" onclick="RepoSearch">
+        <input id="searchBtn" type="submit" value="Submit" onclick="RepoSearch()">
       </form>
 
       <ul id="notFound" class="list-group mx-auto mb-5" style="width: 500px"></ul>
@@ -37,7 +37,70 @@
 
       </ul>
     </div> 
-    <script type="text/javascript" src="src/RepoSearch.js"></script>
+    <script>
+      
+const searchForm = document.getElementById('searchForm');
+
+searchForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  let userInput = document.getElementById('userInput');
+  let username = userInput.value;
+  RepoSearch(username);
+
+})
+
+
+async function RepoSearch(username) {
+  const reqst = new XMLHttpRequest();
+
+
+const url = await `https://api.github.com/users/${username}/repos`;
+
+  reqst.open('GET', url, true);
+
+  document.getElementById("searchUsers").innerHTML=""
+
+  reqst.onload = function() {
+    const data = JSON.parse(this.response);
+
+    for (let i in data){
+      let div = document.getElementById('searchUsers');
+
+      let p = document.createElement('p');
+
+      p.classList.add('list-group-item');
+
+
+       if (data[i].open_issues_count >= 1) {
+
+            p.innerHTML = (`
+             <p><h3> <a href="${data[i].owner.html_url}" target="blank">${data[i].owner.login.charAt(0).toUpperCase() + data[i].owner.login.slice(1)}'s</a> Repos</h3></p>
+        <p class="avatarpic"><img class="avatar" src="${data[i].owner.avatar_url}" class="avatar"/></p>     
+                <p><strong>Repo:</strong> <a href="${data[i].html_url}" target=blank_">${data[i].name.charAt(0).toUpperCase() + data[i].name.slice(1)}</a></p>
+                <p><strong>Description:</strong> ${data[i].description}</p>
+                <p><strong>Open Issues count:</strong> ${data[i].open_issues_count}</p>
+                <p><strong>Open Issues page:</strong> <a href="${data[i].html_url}/issues" target=blank_">View Open Issues on GitHub</a></p>
+                <p><strong>Primary Language:</strong> ${data[i].language}</p>
+                <p><strong>Topics:</strong> ${data[i].topics.join(", ")}</p>
+            `);
+           
+            div.appendChild(p);
+    } 
+
+  }   
+
+  console.log(data);
+
+  }
+
+  reqst.send();
+
+}
+
+
+
+    </script>
 
  
   </body>

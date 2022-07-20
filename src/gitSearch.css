@@ -96,10 +96,10 @@ button:active, #searchBtn:active{
 }
 
 #searchUsers {
-	text-align: left;
+	text-align: center;
 	margin-top: 25px;
 	margin-bottom: 50px;
-	color: white;
+	color: var(--Darkgreen);
 }
 
 #searchUsers hr {
