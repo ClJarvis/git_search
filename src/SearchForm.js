@@ -1,9 +1,10 @@
-import React, { Component } from "react";
-import RepoSearch from "./RepoSearch";
-import ReactDOM from 'react-dom';
+//import React, { Component } from "react";
+//import RepoSearch from "./RepoSearch";
+//import ReactDOM from 'react-dom';
 
 
 export default function SearchForm() {
+//const React = require(react);
 
 const form = document.getElementById("searchForm");
 

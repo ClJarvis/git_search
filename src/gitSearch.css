@@ -77,8 +77,8 @@ button:active, #searchBtn:active{
 }
 
 .list-group-item:first-child {
-    border-top-left-radius: 7%;
-	border-top-right-radius: 7%;
+    border-top-left-radius: 5%;
+	border-top-right-radius: 5%;
 }
 
 .list-group-item:last-child {
@@ -96,7 +96,7 @@ button:active, #searchBtn:active{
 }
 
 #searchUsers {
-	text-align: center;
+	text-align: left;
 	margin-top: 25px;
 	margin-bottom: 50px;
 	color: var(--Darkgreen);

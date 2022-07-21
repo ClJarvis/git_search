@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { Octokit } from "@octokit/rest";
+//import React, { Component } from "react";
+//import { Octokit } from "@octokit/rest";
 import 'bootstrap/dist/css/bootstrap.css';
 import './gitSearch.css';
-import { createTokenAuth } from "https://cdn.skypack.dev/@octokit/auth-token";
+//import { createTokenAuth } from "https://cdn.skypack.dev/@octokit/auth-token";
 
 //* This module finds the user repos. It lists selected details about the repo.
 //const authentication = await auth();
-
+//const React = require(react);
 
 const searchForm = document.getElementById('searchForm');
 
