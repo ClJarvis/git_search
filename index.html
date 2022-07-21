@@ -1,1 +1,42 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="manifest" href="/git_search/manifest.json"/><script src="src/RepoSearch.js"></script><title>Issue Search</title><script defer="defer" src="/git_search/static/js/main.ca58dfe5.js"></script><link href="/git_search/static/css/main.9fbbf4b2.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><div class="main"><div class="flex-container"><h1>public Open Source Issue Search</h1><form id="searchForm" class="form-inline mx-auto"><div class="instructions">Enter a GitHub username to see if they have repositories with open issues.</div><input id="userInput" class="form-control mb-5" name="username" placeholder="Enter GitHub Username"> <input id="searchBtn" type="submit" value="Submit"></form><ul id="notFound" class="list-group mx-auto mb-5" style="width:500px"></ul><ul id="searchUsers" class="list-group mx-auto mb-5" style="width:500px"></ul></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+   
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+   <script src="src/RepoSearch.js"></script>
+    <title>Issue Search</title>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    
+    <div class="main">
+        <div class="flex-container">
+
+      <h1>Open Issue Search</h1>
+      <form id="searchForm" class="form-inline mx-auto">
+      <div class="instructions">
+        Enter a GitHub username to see if they have repositories with open issues. If they have a open issues, a card with repo details and links will appear.
+      </div>
+        <input id="userInput" class="form-control mb-5" type="text" name="username" placeholder="Enter GitHub Username">
+        <input id="searchBtn" type="submit" value="Submit">
+      </form>
+
+      <ul id="notFound" class="list-group mx-auto mb-5" style="width: 500px"></ul>
+
+      <ul id="searchUsers" class="list-group mx-auto mb-5" style="width: 500px">
+
+      </ul>
+    </div>
+    </div> 
+  </body>
+</html>
