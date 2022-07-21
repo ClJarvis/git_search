@@ -4,7 +4,7 @@
 
 
 export default function SearchForm() {
-//const React = require(react);
+const React = require('react');
 
 const form = document.getElementById("searchForm");
 

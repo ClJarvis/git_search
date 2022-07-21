@@ -6,7 +6,7 @@ import './gitSearch.css';
 
 //* This module finds the user repos. It lists selected details about the repo.
 //const authentication = await auth();
-//const React = require(react);
+const React = require('react');
 
 const searchForm = document.getElementById('searchForm');
 
