@@ -22,6 +22,7 @@ body {
 	color: white; /* #4b9565 */
 	text-align: left;
 	padding-bottom: 10px; 
+	width: fit-content;
 }
 
 h1 {
