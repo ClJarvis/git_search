@@ -1,0 +1,148 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--Lightgreen: #66d455;
+	--MidGreen: rgb(36 95 57);
+	--Darkgreen: #2e382c;
+}
+
+body {
+	background-color: black;
+	background: linear-gradient(rgb(36 95 57), #22401c, rgb(36 95 57)); /*var(--MidGreen);*/
+	height: 100%;
+	width: 95%;
+	color: white;
+	/*background-repeat: no-repeat; */
+}
+
+.instructions{
+	color: white; /* #4b9565 */
+	text-align: left;
+	padding-bottom: 10px; 
+}
+
+h1 {
+	color: white;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+div {
+	text-align: center;
+	width: 94vw;
+	margin: 0 auto;
+}
+
+
+
+input {
+	width: 100%;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 6px;
+	border: 2px solid black;
+	box-shadow: 2px .5px #999;
+}
+
+button, #searchBtn {
+	width: 100%;
+	border-radius: 6px;
+	background-color: #4b9565;
+	color: white;
+	font-size: 1.5rem;
+	border-color: #151815;
+	box-shadow: 2px 0.5px var(--Lightgreen);
+}
+
+button:hover, #searchBtn:hover{
+	border-color: black;
+	box-shadow: 2px 0.5px var(--Lightgreen);;
+	}
+
+button:active, #searchBtn:active{
+	border-color: var(--Darkgreen);
+	box-shadow: 2px 0.5px var(--Lightgreen);
+	}
+
+
+.list-group-item {
+	text-align: left;
+	background-color: white;
+	filter: drop-shadow(14px 14px 10px black);
+	border-radius: 7%;
+	margin-bottom: 20px;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 5%;
+	border-top-right-radius: 5%;
+}
+
+.list-group-item:last-child {
+	border-bottom-left-radius: 7%;
+	border-bottom-right-radius: 7%;
+}
+
+#notFound {
+	text-align: center;
+	margin-top: 25px;
+	margin-bottom: 50px;
+	color: white;
+	width: 100%;
+	font-size: 1.5rem;
+}
+
+#searchUsers {
+	text-align: left;
+	margin-top: 25px;
+	margin-bottom: 50px;
+	color: var(--Darkgreen);
+}
+
+#searchUsers hr {
+	width:100%;
+	height:10px;
+	background:#4b9565;
+	box-shadow: 0 10px 10px -10px #000 inset;
+	padding: 0;
+	border-radius: 40%;
+}
+
+#searchForm {
+	height: 75%;
+	width: 500px;
+}
+
+
+ #searchUsers a {
+	color: white;
+}
+
+#searchUsers .list-group-item a {
+	color: #4b9565;
+}
+
+.list-group-item .avatar {
+	text-align: center;
+
+}
+
+.avatar {
+	height: 350px;
+	width: 350px;
+	border-radius: 50%;
+	border: 4px var(--Darkgreen) solid;
+	margin-bottom: 20px;
+}
+
+.avatarpic {
+	text-align: center;
+}
+
+p {
+	margin-bottom: 0rem;
+}
+
