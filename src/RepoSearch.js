@@ -29,14 +29,16 @@ const url = await `https://api.github.com/users/${username}/repos`;
 	reqst.open('GET', url, true);
 
 	document.getElementById("searchUsers").innerHTML=""
-
 	reqst.onload = function() {
 		const data = JSON.parse(this.response);
+		let totalOpen = 0;
 
 		for (let i in data){
 			let div = document.getElementById('searchUsers');
 
 			let p = document.createElement('p');
+
+
 
 			p.classList.add('list-group-item');
 
@@ -55,11 +57,19 @@ const url = await `https://api.github.com/users/${username}/repos`;
             `);
            
             div.appendChild(p);
+            totalOpen = totalOpen + 1;
 		} 
 
 	} 	
-
 	console.log(data);
+	//console.log(totalOpen);
+
+		let div = document.getElementById('totalOpenCount');
+
+			document.getElementById("totalOpenCount").innerHTML =`
+			<p><strong>There are ${totalOpen} repos with open issues.</strong></p>
+
+		`
 
   }
 

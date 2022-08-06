@@ -8,10 +8,10 @@ The intent is for the user to search for repos with open issues. Each repo will 
 
 ## What is happening?
 
-    1. Entering a  name triggers an API call to see if that user exists. If user does not exist viewer will get a message that the user is  not found.
+ 1. Entering a  name triggers an API call to see if that user exists. If user does not exist viewer will get a message that the user is  not found.
     If user does exist another call will will check for repos with open issues.
-    2. If user has no open issue only user info card will appear. 
-    3. Repo Cards only appear for repos with open issues.
+ 2. If user has no open issue only user info card will appear. 
+ 3. Repo Cards only appear for repos with open issues.
 
 
 ## Tech
